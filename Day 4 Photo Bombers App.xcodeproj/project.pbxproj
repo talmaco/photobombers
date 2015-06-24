@@ -14,6 +14,7 @@
 		BEC344171B3A6A3A00690D4D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEC344161B3A6A3A00690D4D /* Images.xcassets */; };
 		BEC3441A1B3A6A3A00690D4D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BEC344181B3A6A3A00690D4D /* LaunchScreen.xib */; };
 		BEC344261B3A6A3A00690D4D /* Day_4_Photo_Bombers_AppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC344251B3A6A3A00690D4D /* Day_4_Photo_Bombers_AppTests.m */; };
+		BEC344311B3A6D5400690D4D /* PhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC344301B3A6D5400690D4D /* PhotoCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		BEC3441F1B3A6A3A00690D4D /* Day 4 Photo Bombers AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Day 4 Photo Bombers AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC344241B3A6A3A00690D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEC344251B3A6A3A00690D4D /* Day_4_Photo_Bombers_AppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Day_4_Photo_Bombers_AppTests.m; sourceTree = "<group>"; };
+		BEC3442F1B3A6D5400690D4D /* PhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		BEC344301B3A6D5400690D4D /* PhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				BEC344161B3A6A3A00690D4D /* Images.xcassets */,
 				BEC344181B3A6A3A00690D4D /* LaunchScreen.xib */,
 				BEC344091B3A6A3A00690D4D /* Supporting Files */,
+				BEC3442F1B3A6D5400690D4D /* PhotoCollectionViewCell.h */,
+				BEC344301B3A6D5400690D4D /* PhotoCollectionViewCell.m */,
 			);
 			path = "Day 4 Photo Bombers App";
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEC344121B3A6A3A00690D4D /* ViewController.m in Sources */,
+				BEC344311B3A6D5400690D4D /* PhotoCollectionViewCell.m in Sources */,
 				BEC3440F1B3A6A3A00690D4D /* AppDelegate.m in Sources */,
 				BEC3440C1B3A6A3A00690D4D /* main.m in Sources */,
 			);
