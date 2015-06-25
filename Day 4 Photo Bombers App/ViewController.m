@@ -14,7 +14,7 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSString *accessToken;
-
+@property (nonatomic, strong) NSMutableArray *photos;
 
 @end
 
@@ -58,7 +58,7 @@
 - (void)downloadImages
 {
     NSURLSession *session = [NSURLSession sharedSession];
-    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/tags/thesummerstartupschool/media/recent?access_token=%@", self.accessToken];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/tags/apple/media/recent?access_token=%@", self.accessToken];
     NSLog(@"%@", urlString);
 
     NSURL *url = [[NSURL alloc] initWithString:urlString];
@@ -71,7 +71,13 @@
         NSData *data = [[NSData alloc] initWithContentsOfURL:location];
         
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        NSLog(@"response object is : %@", responseDictionary);
+        //NSLog(@"response object is : %@", responseDictionary);
+        
+        self.photos = responseDictionary[@"data"];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
         
     }];
     
@@ -87,14 +93,17 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.photos count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     PhotoCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:@"bomb.jpg"];
+   // cell.imageView.image = [UIImage imageNamed:@"bomb.jpg"];
+    
+    NSDictionary *photo = self.photos[indexPath.row];
+    cell.photo = photo;
     
     return cell;
 }
