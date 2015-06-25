@@ -58,27 +58,23 @@
 - (void)downloadImages
 {
     NSURLSession *session = [NSURLSession sharedSession];
-    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/tags/apple/media/recent?access_token=%@", self.accessToken];
+    NSString *urlString = [[NSString alloc] initWithFormat:@"https://api.instagram.com/v1/tags/cat/media/recent?access_token=%@", self.accessToken];
     NSLog(@"%@", urlString);
-
-    NSURL *url = [[NSURL alloc] initWithString:urlString];
     
+    NSURL *url = [[NSURL alloc] initWithString:urlString];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     
-    NSURLSessionDownloadTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        // NSLog(@"response is : %@", response);
-        
+    NSURLSessionTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
         NSData *data = [[NSData alloc] initWithContentsOfURL:location];
-        
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-        //NSLog(@"response object is : %@", responseDictionary);
+        
+        NSLog(@"response dictionary is %@", responseDictionary);
         
         self.photos = responseDictionary[@"data"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.collectionView reloadData];
         });
-        
     }];
     
     [task resume];

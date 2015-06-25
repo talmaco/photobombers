@@ -7,6 +7,7 @@
 //
 
 #import "PhotoCollectionViewCell.h"
+#import "PhotoController.h"
 
 @implementation PhotoCollectionViewCell
 
@@ -32,27 +33,10 @@
 {
     _photo = photo;
     
-    [self downloadImage];
-}
-
-- (void) downloadImage
-{
-    NSLog(@"%@", self.photo);
-    // images -> thumbnail -> url
-    
-    NSURL *url = [[NSURL alloc] initWithString:self.photo[@"images"][@"thumbnail"][@"url"]];
-    
-    NSURLSession *session = [NSURLSession sharedSession];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
-    NSURLSessionTask *task = [session downloadTaskWithRequest:request completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-        NSData *data = [[NSData alloc] initWithContentsOfURL:location];
-        UIImage *image = [[UIImage alloc] initWithData:data];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.imageView.image = image;
-        });
+    [PhotoController imageForPhoto:self.photo withSize:@"thumbnail" completion:^(UIImage *image) {
+        self.imageView.image = image;
     }];
-    
-    [task resume];
+
 }
 
 @end
