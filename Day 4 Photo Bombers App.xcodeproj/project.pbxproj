@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2B8A7877299921C857116C84 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8C8AAD051DBA8AA711501B /* libPods.a */; };
 		BE5DD5B41B3BD92000E3AA99 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5DD5B31B3BD92000E3AA99 /* PhotoController.m */; };
+		BE5DD5B71B3BF49A00E3AA99 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5DD5B61B3BF49A00E3AA99 /* DetailViewController.m */; };
 		BEC3440C1B3A6A3A00690D4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC3440B1B3A6A3A00690D4D /* main.m */; };
 		BEC3440F1B3A6A3A00690D4D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC3440E1B3A6A3A00690D4D /* AppDelegate.m */; };
 		BEC344121B3A6A3A00690D4D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BEC344111B3A6A3A00690D4D /* ViewController.m */; };
@@ -35,6 +36,8 @@
 		B051797D2C86B727E8C8607A /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		BE5DD5B21B3BD92000E3AA99 /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
 		BE5DD5B31B3BD92000E3AA99 /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
+		BE5DD5B51B3BF49A00E3AA99 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BE5DD5B61B3BF49A00E3AA99 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BEC344061B3A6A3A00690D4D /* Day 4 Photo Bombers App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day 4 Photo Bombers App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEC3440A1B3A6A3A00690D4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BEC3440B1B3A6A3A00690D4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				BEC344301B3A6D5400690D4D /* PhotoCollectionViewCell.m */,
 				BE5DD5B21B3BD92000E3AA99 /* PhotoController.h */,
 				BE5DD5B31B3BD92000E3AA99 /* PhotoController.m */,
+				BE5DD5B51B3BF49A00E3AA99 /* DetailViewController.h */,
+				BE5DD5B61B3BF49A00E3AA99 /* DetailViewController.m */,
 			);
 			path = "Day 4 Photo Bombers App";
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 				BEC3440F1B3A6A3A00690D4D /* AppDelegate.m in Sources */,
 				BEC3440C1B3A6A3A00690D4D /* main.m in Sources */,
 				BE5DD5B41B3BD92000E3AA99 /* PhotoController.m in Sources */,
+				BE5DD5B71B3BF49A00E3AA99 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
