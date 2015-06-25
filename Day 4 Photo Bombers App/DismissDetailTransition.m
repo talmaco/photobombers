@@ -12,14 +12,14 @@
 
 -(NSTimeInterval)transitionDuration:(id<UIViewControllerContextTransitioning>)transitionContext
 {
-    return 0.3;
+    return 0.5;
 }
 
 -(void)animateTransition:(id<UIViewControllerContextTransitioning>)transitionContext
 {
     UIViewController *detailVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
-    
-    [UIView animateWithDuration:0.3 animations:^{
+
+    [UIView animateWithDuration:0.5 animations:^{
         detailVC.view.alpha = 0.0;
     } completion:^(BOOL finished) {
         [detailVC.view removeFromSuperview];
