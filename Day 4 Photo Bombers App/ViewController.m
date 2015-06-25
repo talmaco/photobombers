@@ -10,8 +10,10 @@
 #import "PhotoCollectionViewCell.h"
 #import <SimpleAuth/SimpleAuth.h>
 #import "DetailViewController.h"
+#import "PresentDetailView.h"
+#import "DismissDetailTransition.h"
 
-@interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate>
+@interface ViewController () <UICollectionViewDataSource,UICollectionViewDelegate, UIViewControllerTransitioningDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, strong) NSString *accessToken;
@@ -111,10 +113,23 @@
     
     DetailViewController *viewController = [DetailViewController new];
 
-    viewController.modalPresentationStyle = UIModalPresentationCurrentContext;
+    viewController.modalPresentationStyle = UIModalPresentationCustom;
     viewController.photo = photo;
+    viewController.transitioningDelegate = self;
     
     [self presentViewController:viewController animated:YES completion:nil];
+}
+
+#pragma mark - Transitioning delegates
+-(id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+{
+    return [PresentDetailView new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
+
+{
+    return [DismissDetailTransition new];
 }
 
 @end
